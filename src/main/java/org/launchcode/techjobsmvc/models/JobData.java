@@ -230,6 +230,12 @@ public class JobData {
         return allCoreCompetency;
     }
 
+    // not needed?
+    public static ArrayList<Job> getAll( ) {
+        loadData();
+        allJobs.sort(new NameSorter());
+        return allJobs;
+    }
 }
 
 
