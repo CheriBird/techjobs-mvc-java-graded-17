@@ -38,15 +38,13 @@ public class SearchController {
 
         if (searchTerm.isEmpty() || searchTerm.equals("all")) {
             jobs = findAll();
-            model.addAttribute("jobs", jobs);
-            model.addAttribute("columns", columnChoices);
         } else {
             jobs = findByColumnAndValue(searchType, searchTerm);
-            model.addAttribute("jobs", jobs);
             model.addAttribute("searchType", searchType);
             model.addAttribute("searchTerm", searchTerm);
-            model.addAttribute("columns", columnChoices);
         }
+        model.addAttribute("jobs", jobs);
+        model.addAttribute("columns", columnChoices);
         return "search";
 
     }
